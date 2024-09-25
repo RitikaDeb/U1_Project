@@ -1,0 +1,45 @@
+import java.util.Scanner;  // Import the Scanner class
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        //user inputs
+
+
+        Scanner bill = new Scanner(System.in);   //asks for bill amount
+        System.out.print("Enter bill amount($): ");
+        double userBill = bill.nextDouble();
+
+
+        Scanner tip_pct = new Scanner(System.in); //asks for tip percent
+        System.out.print("Tip Percent (whole number): "); //reminder to users to use whole numbers
+        double userTip = tip_pct.nextDouble();
+
+
+        Scanner num_ppl = new Scanner(System.in); //asks for number of people
+        System.out.print("Number of People: ");
+        double userPpl = num_ppl.nextDouble();
+
+
+        //Calculations
+        double totalTip = (userTip/100)*userBill;   //finds the total tip
+        double totalCost = userBill + totalTip;   //combines bill amount with total tip
+        double perTip = totalTip/userPpl;   //finds tip per person
+        double perBill = totalCost/userPpl;  //total money per person is paying
+
+
+        //output
+        System.out.println();
+        System.out.println("---------------------------");
+        System.out.printf("Total tip amount: " + "$%.2f %n", totalTip);
+        System.out.println("---------------------------");
+        System.out.printf("Total bill cost: " + "$%.2f %n", totalCost);
+        System.out.println("---------------------------");
+        System.out.printf("Tip per person: " + "$%.2f %n", perTip);
+        System.out.println("---------------------------");
+        System.out.printf("Total bill per person: " + "$%.2f %n", perBill);
+        System.out.println("---------------------------");
+
+    }
+}
